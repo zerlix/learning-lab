@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBE Wings</title>
+    <link rel="icon" type="image/svg+xml" href="resources/images/favicon.svg">
+    <style>
+        /* CSS */
+        .tabs {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tab-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab-link {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            background-color: #3e3e3e;
+            cursor: pointer;
+        }
+
+        .tab-link.active {
+            background-color: #f0f0f0;
+        }
+
+        .tab-content {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HTML -->
+    <div class="tabs">
+        <div class="tab-header">
+            <button class="tab-link active" data-tab="tab1">TAB1</button>
+            <button class="tab-link" data-tab="tab2">TAB2</button>
+            <button class="tab-link" data-tab="tab3">TAB3</button>
+            <button class="tab-link" data-tab="tab4">TAB4</button>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">TAB1 Content 1</div>
+            <div class="tab-pane" id="tab2">TAB2 Content 2</div>
+            <div class="tab-pane" id="tab3">TAB3 Content 3</div>
+            <div class="tab-pane" id="tab4">TAB4 Content 4</div>
+        </div>
+    </div>
+<script>
+
+const tabLinks = document.querySelectorAll('.tab-link');
+
+tabLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const tabId = link.getAttribute('data-tab');
+    const tabPane = document.getElementById(tabId);
+
+    // Aktiviere den aktuellen Tab
+    link.classList.add('active');
+    tabPane.classList.add('active');
+
+    // Deaktiviere die anderen Tabs
+    tabLinks.forEach((otherLink) => {
+      if (otherLink !== link) {
+        otherLink.classList.remove('active');
+        const otherTabId = otherLink.getAttribute('data-tab');
+        const otherTabPane = document.getElementById(otherTabId);
+        otherTabPane.classList.remove('active');
+      }
+    });
+  });
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" version="1.1" id="svg_null">
+    <g id="root" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="background.accent" fill="#f6f6f6" x="0" y="0" width="500" height="500"/>
+        <g id="shape.primary" transform="translate(150.000000, 123.000000)" fill="#004a55">
+            <path d="M164.662 0l-89.688 0l-34.607 32.058l79.451 86.99l79.452 -86.99l-34.608 -32.058zm-4.104 11.775l22.67 20.999l-63.41 69.421l-63.407 -69.421l22.668 -20.999l81.479 0z"/>
+            <path d="M124.295 0l-89.688 0l-34.607 32.058l79.451 86.99l79.454 -86.99l-34.61 -32.058zm-4.104 11.775l22.67 20.999l-63.41 69.421l-63.407 -69.421l22.668 -20.999l81.479 0z"/>
+            <polyline points="109.604 17.663 92.789 17.663 109.103 32.776 86.239 57.808 93.934 66.233 125.145 32.059 109.604 17.663"/>
+        </g>
+        <g id="Group" transform="translate(40.000000, 280.000000)">
+            <rect id="Rectangle-28" x="0" y="0" width="421" height="54" fill="none"/>
+            <text 
+                id="headerText.primary" 
+                font-family="Cutive Mono" 
+                font-size="54" 
+                font-weight="400" 
+                letter-spacing="5.4" 
+                fill="#004a55" 
+                text-anchor="middle" 
+                dominant-baseline="middle" 
+                x="210.5" 
+                y="27">
+                Stark
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Custom Slider Trigger</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('resources/fonts/Roboto-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            src: url('resources/fonts/Roboto-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #555;
+            background-color: #ffffff;
+        }
+
+
+
+        .form-hidden-inputs {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            width: 200px;
+            background: #f9f9f9;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .slider input[type="range"] {
+            width: 100%;
+        }
+
+        #form-icon-filter {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post" class="form-search">
+
+        <!-- Select Container -->
+        <div class="form-select">
+            <select>
+                <option value="1">Hin- und Rückflug</option>
+                <option value="2">Hinflug</option>
+            </select>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="form-slider-container">
+            <!-- Icon -->
+            <div class="form-icon" onclick="toggleSlider()">
+                <img id="form-icon-filter" src="resources/images/dbe-wings/icon-tune.svg"> 1 Reisender, Economy
+            </div>
+
+            <!-- Hidden form Slider -->
+            <div class="form-hidden-inputs">
+                <div>
+                    <label for="passengers">Passagiere:</label>
+                    <input type="range" min="1" max="8" value="1" step="1" id="passengerSlider"
+                        onchange="updateDisplay()" />
+                </div>
+                <div>
+                    <input type="radio" name="class" value="Economy" id="economy" checked onchange="updateDisplay()">
+                    <label for="economy">Economy</label>
+                </div>
+                <div>
+                    <input type="radio" name="class" value="Business" id="business" onchange="updateDisplay()">
+                    <label for="business">Business</label>
+                </div>
+                <div>
+                    <input type="radio" name="class" value="First" id="first" onchange="updateDisplay()">
+                    <label for="first">First</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nonstop Radio Container -->
+        <div class="form-radio-container">
+            <input type="radio" name="nonstop">Nur Nonstop Flüge
+        </div>
+        
+        <div class="form-input">
+            <input type="text" value="Von">
+        </div>
+
+        <div class="form-input">
+            <input type="text" value="Nach">
+        </div>
+
+        <div class="form-input">
+            <input type="text" value="Ab- und Rückflug">
+        </div>
+
+        <div class="form-submit">
+            <input type="submit" value="Suche">
+        </div>
+    </form>
+
+    <script>
+        // Slider ein-/ausblenden
+        function toggleSlider() {
+            const slider = document.querySelector('.form-hidden-inputs');
+            slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Wert und Klasse anzeigen
+        function updateDisplay() {
+            // Aktuellen Slider-Wert holen
+            const sliderValue = document.getElementById('passengerSlider').value;
+
+            // Ausgewählte Klasse holen
+            const selectedClass = document.querySelector('input[name="class"]:checked').value;
+
+            // Icon-Text aktualisieren
+            const icon = document.querySelector('.form-icon');
+            icon.innerHTML = `<img id="form-icon-filter" src="resources/images/dbe-wings/icon-tune.svg"> ${sliderValue} Reisende, ${selectedClass}`;
+
+        }
+    </script>
+</body>
+
+</html>

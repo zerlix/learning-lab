@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="de">
+    <meta charset="UTF-8">
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            /* Beliebiger Name für die Schriftart */
+            src: url('resources/fonts/Roboto-Regular.ttf') format('truetype');
+            font-weight: 400;
+            /* Normalgewicht */
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            src: url('resources/fonts/Roboto-Bold.ttf') format('truetype');
+            font-weight: 700;
+            /* Fettgewicht */
+            font-style: normal;
+        }
+
+        .roboto-text {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .roboto-bold-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            /* Nutzt Roboto-Bold.ttf */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1px solid #aeaeae;
+        }
+
+        #acc_nav {
+            float: right;
+            margin: 20px 20px 0 0;
+        }
+
+        #acc_nav a {
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+
+        #login {
+            background-color: rgb(5, 141, 253);
+            color: white;
+        }
+
+        #reg {
+            background-color: white;
+            color: rgb(5, 141, 253);
+        }
+
+        main {
+            margin-top: 0;
+            padding-top: 80px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #logo {
+            display: inline-block;
+        }
+
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-button {
+            background-color: #e5e7ec;
+            border: 0px;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .cat {
+            margin-top: 40px;
+        }
+
+        .cat h2 {
+            font-size: 24px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: nowrap;
+            margin-top: 20px;
+        }
+
+        .image-item {
+            position: relative;
+            width: calc(100% / 6 - 20px);
+            box-sizing: border-box;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="logo">
+            <a href="#">
+                <img src="https://storage01.dbe.academy/fswd/insta-logo.png" alt="Insta-Logo">
+            </a>
+        </div>
+        <div id="acc_nav">
+            <a id="login" href="#" title="Bei Instagram anmelden">Anmelden</a>
+            <a id="reg" href="#" title="Bei Instagram registrieren">Registrieren</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Neues entdecken</h1>
+        <div class="filter-container">
+            <button class="filter-button">Fotografie</button>
+            <button class="filter-button">Zitate</button>
+            <button class="filter-button">Akrylnägel</button>
+            <button class="filter-button">Frisuren</button>
+            <button class="filter-button">Tätowierungen</button>
+        </div>
+
+        <div class="content">
+            <section class="cat">
+                <h2>Musik & Audio ></h2>
+                <div class="image-container">
+                    <div class="image-item"><img src="resources/images/1.jpg" alt="Bild 1">
+                        <div class="image-text">Text für Bild 1</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/2.jpg" alt="Bild 2">
+                        <div class="image-text">Text für Bild 2</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/3.jpg" alt="Bild 3">
+                        <div class="image-text">Text für Bild 3</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/4.jpg" alt="Bild 4">
+                        <div class="image-text">Text für Bild 4</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/5.jpg" alt="Bild 5">
+                        <div class="image-text">Text für Bild 5</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/6.jpg" alt="Bild 6">
+                        <div class="image-text">Text für Bild 6</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cat">
+                <h2>Sport ></h2>
+                <div class="image-container">
+                    <div class="image-item"><img src="resources/images/7.jpg" alt="Bild 7">
+                        <div class="image-text">Text für Bild 7</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/8.jpg" alt="Bild 8">
+                        <div class="image-text">Text für Bild 8</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/9.jpg" alt="Bild 9">
+                        <div class="image-text">Text für Bild 9</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/10.jpg" alt="Bild 10">
+                        <div class="image-text">Text für Bild 10</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/11.jpg" alt="Bild 11">
+                        <div class="image-text">Text für Bild 11</div>
+                    </div>
+                    <div class="image-item"><img src="resources/images/12.jpg" alt="Bild 12">
+                        <div class="image-text">Text für Bild 12</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>
