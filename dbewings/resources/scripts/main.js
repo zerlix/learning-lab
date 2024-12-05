@@ -39,22 +39,26 @@ tabLinks.forEach((link) => {
 });
 
 
- // Slider ein-/ausblenden
- function toggleSlider() {
+// Slider ein-/ausblenden
+function toggleSlider() {
     const slider = document.querySelector('.form-hidden-inputs');
     slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
 }
-
-// Wert und Klasse anzeigen
 function updateDisplay() {
-    // Aktuellen Slider-Wert holen
     const sliderValue = document.getElementById('passengerSlider').value;
-
-    // Ausgewählte Klasse holen
     const selectedClass = document.querySelector('input[name="class"]:checked').value;
-
-    // Icon-Text aktualisieren
     const icon = document.querySelector('.form-icon');
     icon.innerHTML = `<img id="form-icon-filter" src="./resources/images/icon-tune.svg"> ${sliderValue} Reisende, ${selectedClass}`;
 
 }
+
+// Overlay
+document.querySelector("#form-fluege").addEventListener("submit", function (e) {
+    e.preventDefault(); 
+    const overlay = document.getElementById("overlay");
+    overlay.classList.remove("hidden");
+    setTimeout(() => {
+        overlay.classList.add("hidden"); 
+        alert("Suche abgeschlossen!");
+    }, 3000);
+});
