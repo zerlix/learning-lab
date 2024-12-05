@@ -68,8 +68,9 @@ body {
     color: var(--dbe-green);
     border: 2px solid;
     position: relative;
-  }
-  .loader::before {
+}
+
+.loader::before {
     content: "";
     position: absolute;
     margin: 2px;
@@ -77,10 +78,13 @@ body {
     border-radius: inherit;
     background: currentColor;
     animation: l6 2s infinite;
-  }
-  @keyframes l6 {
-      100% {inset:0}
-  }
+}
+
+@keyframes l6 {
+    100% {
+        inset: 0
+    }
+}
 
 
 

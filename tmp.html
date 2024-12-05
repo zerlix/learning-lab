@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Beispiel</title>
+</head>
+<body>
+    <script id="variablen" type="application/json">{"name": "Daniel", "alter": 37}</script>
+
+    <script>
+        // Zugriff auf den textContent des <script>-Tags und Speichern in der Variable x
+        var x = document.getElementById("variablen").textContent;
+
+        // Umwandlung von x in ein JavaScript-Objekt
+        var jsObject = JSON.parse(x);
+
+        // Ausgabe des Objekts per console.log
+        console.log(jsObject);
+    </script>
+</body>
+</html>
+
