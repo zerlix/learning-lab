@@ -59,6 +59,5 @@ document.querySelector("#form-fluege").addEventListener("submit", function (e) {
     overlay.classList.remove("hidden");
     setTimeout(() => {
         overlay.classList.add("hidden"); 
-        alert("Suche abgeschlossen!");
     }, 3000);
 });
