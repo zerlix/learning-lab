@@ -1,5 +1,3 @@
-
-
 // Hamburger-Menü anzeigen / ausblenden
 const hamburger = document.getElementById('hamburger-button');
 const menu = document.getElementById('hamburger-menu');
@@ -12,9 +10,8 @@ hamburger.addEventListener('click', () => {
 });
 
 
-// Tabs
+// Tabs Formularfeld
 const tabLinks = document.querySelectorAll('.tab-link');
-
 tabLinks.forEach((link) => {
     link.addEventListener('click', () => {
         const tabId = link.getAttribute('data-tab');
@@ -51,6 +48,7 @@ function updateDisplay() {
     icon.innerHTML = `<img id="form-icon-filter" src="./resources/images/icon-tune.svg"> ${sliderValue} Reisende, ${selectedClass}`;
 
 }
+
 
 // Overlay
 document.querySelector("#form-fluege").addEventListener("submit", function (e) {

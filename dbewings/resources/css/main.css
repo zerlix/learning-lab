@@ -48,26 +48,29 @@ body {
 
 /* Inhalt des Overlays */
 .overlay-content {
-    background: #fff;
+    background-color: transparent;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    color: var(--dbe-white)
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);*/
 }
 
 /* Standardmäßig versteckt */
 #overlay.hidden {
     display: none;
+    background-color: transparent;
 }
 
-/* HTML: <div class="loader"></div> */
+/* loading ooverlay*/
 .loader {
-    width: 120px;
-    height: 22px;
+    width: 220px;
+    height: 30px;
     border-radius: 20px;
     color: var(--dbe-green);
     border: 2px solid;
     position: relative;
+    background-color: var(--dbe-white);
 }
 
 .loader::before {
@@ -380,8 +383,6 @@ form select:focus {
     height: 1px;
     z-index: 1;
     margin-left: 20px;
-
-
 }
 
 .swap-icon img {
