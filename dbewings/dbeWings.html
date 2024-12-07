@@ -4,17 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>DBE Wings</title>
     <link rel="stylesheet" href="./resources/css/main.css">
-
-
-    <style>
-
-    </style>
 </head>
 
 <body>
+    <!-- search progress bar-->
     <div id="overlay" class="hidden">
         <div class="overlay-content">
             <div class="loader">
@@ -23,26 +18,25 @@
         </div>
     </div>
 
+    <!-- Header section with logo and hamburger menu -->
     <header class="header">
         <div class="logo">
             <img src="resources/images/logo.svg" alt="DBE Wings Logo">
         </div>
 
-        <!-- Hamburger Menu -->
         <div id="hamburger-menu">
             <a href="#">Buchen & Vorbereiten</a>
             <a href="#">Meine Buchungen</a>
             <a href="#">DBE Fly entdecken</a>
         </div>
         <div id="hamburger-button">☰</div>
-
     </header>
 
 
-
-    <div id="hero">
-
+    <!-- hero section-->
+    <section id="hero">
         <div class="tabs">
+            <!-- Tab Header -->
             <div class="tab-header">
                 <button class="tab-link active tab1" data-tab="tab1">
                     Flüge
@@ -57,11 +51,12 @@
                     Hotel
                 </button>
             </div>
-
+            <!-- Tab Content-->
             <div class="tab-content">
-                <form action="" id="form-fluege" name="fluege" method="post">
-                    <div class="tab-pane active" id="tab1">
-                        <div class="grid-container">
+
+                <div class="tab-pane active" id="tab1">
+                    <form action="" id="form-fluege" name="fluege" method="post">
+                       <div class="grid-container">
                             <div class="form-select grid-items">
                                 <select>
                                     <option value="1">Hin- und Rückflug</option>
@@ -125,17 +120,18 @@
                             <input type="submit" value="Suche">
                         </div>
 
-                    </div>
-                </form>
-            </div>
+                
+                       </div>
+                  </form>
+                </div>
            
 
-            <div class="tab-pane" id="tab2">TAB2 Content 2</div>
-            <div class="tab-pane" id="tab3">TAB3 Content 3</div>
-            <div class="tab-pane" id="tab4">TAB4 Content 4</div>
+                <div class="tab-pane" id="tab2">TAB2 Content 2</div>
+                <div class="tab-pane" id="tab3">TAB3 Content 3</div>
+                <div class="tab-pane" id="tab4">TAB4 Content 4</div>
+            </div>
         </div>
-    </div>
-    </div>
+    </section>    
 
     <script type="text/javascript" src="resources/scripts/main.js"></script>
 </body>
