@@ -1,5 +1,8 @@
+
 const url = "https://dev.curiosum.eu/dbewings/fluege.json";
 let json;
+
+
 async function getData(url) {
   try {
     let response = await fetch(url);

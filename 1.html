@@ -22,11 +22,17 @@
                     // JSON-Daten parsen
                     var data = JSON.parse(xhr.responseText);
 
-                    // Feld "Name" extrahieren
-                    var name = data.Name;
+                    // Daten extrahieren
+                    var name = data.name; // Hauptname
+                    var alter = data.alter; // Alter
+                    var kinder = data.kinder.map(kind => `${kind.name} (${kind.alter} Jahre)`); // Kinderliste formatieren
 
-                    // In den DIV-Tag mit der ID "textinc" einfügen
-                    document.getElementById("textinc").innerHTML = name;
+                    // Inhalte ins HTML schreiben
+                    document.getElementById("textinc").innerHTML = `
+                        <p>Name: ${name}</p>
+                        <p>Alter: ${alter}</p>
+                        <p>Kinder: ${kinder.join(", ")}</p>
+                    `;
                 } else {
                     console.error("Fehler beim Abrufen der Daten:", xhr.status);
                 }
@@ -41,5 +47,3 @@
     </script>
 </body>
 </html>
-
-
