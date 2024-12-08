@@ -41,14 +41,21 @@ function toggleSlider() {
     const slider = document.querySelector('.form-hidden-inputs');
     slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
 }
+
+// Funktion, um die Anzeige des Labels zu aktualisieren
 function updateDisplay() {
+    // Holen des Slider-Werts
     const sliderValue = document.getElementById('passengerSlider').value;
+
+    // Holen des Werts des ausgewählten Radio-Buttons
     const selectedClass = document.querySelector('input[name="class"]:checked').value;
-    const icon = document.querySelector('.form-icon');
-    icon.innerHTML = `<img id="form-icon-filter" src="./resources/images/icon-tune.svg"> ${sliderValue} Reisende, ${selectedClass}`;
 
+    // Anpassen der Beschriftung im Icon
+    const iconLabel = document.getElementById('icon-label');
+    if (iconLabel) {
+        iconLabel.textContent = `${sliderValue} Reisender${sliderValue > 1 ? 'n' : ''}, ${selectedClass}`;
+    }
 }
-
 
 // Overlay
 document.querySelector("#form-fluege").addEventListener("submit", function (e) {
@@ -59,3 +66,40 @@ document.querySelector("#form-fluege").addEventListener("submit", function (e) {
         overlay.classList.add("hidden"); 
     }, 3000);
 });
+
+
+document.getElementById('form-icon-filter').addEventListener('click', function() {
+    const hiddenInputs = document.querySelector('.form-hidden-inputs');
+    hiddenInputs.classList.toggle('show');
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Finde das Swap-Icon und die Eingabefelder
+    const swapIcon = document.getElementById('swap-icon');
+    const inputVon = document.getElementById('input-von');
+    const inputNach = document.getElementById('input-nach');
+
+    // Überprüfe, ob die Elemente vorhanden sind
+    if (swapIcon && inputVon && inputNach) {
+        // Funktion, um die Felder zu tauschen
+        swapIcon.addEventListener('click', function() {
+            // Tausche die Werte und Platzhalter der Eingabefelder
+            const tempValue = inputVon.value;
+            const tempPlaceholder = inputVon.placeholder;
+
+            // Tausche die Eingabewerte
+            inputVon.value = inputNach.value;
+            inputNach.value = tempValue;
+
+            // Tausche die Platzhalter
+            inputVon.placeholder = inputNach.placeholder;
+            inputNach.placeholder = tempPlaceholder;
+        });
+    } else {
+        console.error('Ein oder mehrere Elemente wurden nicht gefunden.');
+    }
+});
+
+
+

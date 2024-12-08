@@ -18,17 +18,18 @@
 }
 
 :root {
-    --dbe-white: #ffffff;
-    --dbe-white-alpha: #f0f0f0e5;
-    --dbe-green: #1ab2b1;
-    --dbe-grey: #3e3e3eea;
-    --dbe-grey-light: #aa9c9c;
+    --dbe-main: #1ab2b1;
+    --dbe-color: #062C2C;
+    --dbe-color1: #0C4F4F;
+    --dbe-bgcolor: #ffffff;
+    --dbe-bgcolor-trans: rgba(0, 0, 0, 0.8);
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
+
 
 
 /* Overlay Hintergrund */
@@ -38,12 +39,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--dbe-bgcolor-trans);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    /* Höher als andere Elemente */
 }
 
 /* Inhalt des Overlays */
@@ -52,8 +52,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    color: var(--dbe-white)
-    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);*/
+    color: var(--dbe-bgcolor)
 }
 
 /* Standardmäßig versteckt */
@@ -67,10 +66,10 @@ body {
     width: 220px;
     height: 30px;
     border-radius: 20px;
-    color: var(--dbe-green);
+    color: var(--dbe-main);
     border: 2px solid;
     position: relative;
-    background-color: var(--dbe-white);
+    background-color: var(--dbe-bgcolor);
 }
 
 .loader::before {
@@ -80,16 +79,15 @@ body {
     inset: 0 100% 0 0;
     border-radius: inherit;
     background: currentColor;
-    animation: l6 2s infinite;
+    animation: load 2s infinite;
 }
 
-
-
-@keyframes l6 {
+@keyframes load {
     100% {
         inset: 0
     }
 }
+
 
 
 
@@ -120,7 +118,7 @@ body {
 
 #hamburger-button {
     display: block;
-    color: var(--dbe-green);
+    color: var(--dbe-main);
     font-size: 2em;
     cursor: pointer;
 }
@@ -128,7 +126,7 @@ body {
 #hamburger-menu {
     display: none;
     flex-direction: column;
-    background-color: var(--dbe-white-alpha);
+    background-color: var(--dbe-bgcolor);
     position: absolute;
     top: 60px;
     right: 0;
@@ -139,7 +137,7 @@ body {
 
 #hamburger-menu a {
     text-decoration: none;
-    color: var(--dbe-green);
+    color: var(--dbe-main);
     font-weight: 700;
     padding: 10px;
 }
@@ -158,7 +156,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--dbe-white);
+    color: var(--dbe-bgcolor);
     text-align: center;
 }
 
@@ -181,8 +179,8 @@ body {
 }
 
 .tab-content {
-    background-color: var(--dbe-white);
-    color: var(--dbe-grey);
+    background-color: var(--dbe-bgcolor);
+    color: var(--dbe-color);
     height: auto;
     padding: 0;
 }
@@ -202,14 +200,14 @@ body {
 
 .tab-link.active {
     border: 0px;
-    background-color: var(--dbe-white);
-    color: var(--dbe-green);
+    background-color: var(--dbe-bgcolor);
+    color: var(--dbe-main);
 }
 
 .tab-link.inactive {
     border: 0px;
-    background-color: var(--dbe-grey);
-    color: var(--dbe-white);
+    background-color: var(--dbe-color);
+    color: var(--dbe-bgcolor);
 }
 
 
@@ -260,16 +258,20 @@ body {
 .form-hidden-inputs {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 120%;
     left: 0;
-    width: 200px;
-    background: #f9f9f9;
-    color: var(--dbe-grey);
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    width: 250px;
+    background: var(--dbe-bgcolor);
+    color: var(--dbe-color);
+    padding: 20px;
+    box-shadow: 0 4px 15px var(--dbe-color);
+    border-radius: 10px;
     z-index: 1000;
-    text-align: left;
+    text-align: justify;
+}
+
+#form-hidden-inputs{
+    margin: 5px;
 }
 
 
@@ -290,7 +292,7 @@ form label {
     width: calc(80% + 20px);
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 1px solid var(--dbe-grey-light);
+    border: 1px solid var(--dbe-color);
     padding: 5px;
 }
 
@@ -298,7 +300,7 @@ form label {
 .form-input-von input {
     width: 80%;
     padding: 10px;
-    border: 1px solid var(--dbe-grey-light);
+    border: 1px solid var(--dbe-color);
 }
 
 .form-input-nach input {
@@ -306,7 +308,7 @@ form label {
     padding-block: 0px;
     padding-inline: 0px;
     padding: 10px;
-    border: 1px solid var(--dbe-grey-light);
+    border: 1px solid var(--dbe-color);
     border-top: 0px;
 }
 
@@ -315,7 +317,7 @@ form label {
     padding-block: 0px;
     padding-inline: 0px;
     padding: 10px;
-    border: 1px solid var(--dbe-grey-light);
+    border: 1px solid var(--dbe-color);
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -351,13 +353,13 @@ form label {
 
 form input:focus,
 form select:focus {
-    border: 1px solid #1ab2b1;
+    border: 1px solid var(--dbe-main);
     outline: none;
 }
 
 .form-submit-search input[type="submit"] {
-    background-color: var(--dbe-green);
-    color: var(--dbe-white);
+    background-color: var(--dbe-main);
+    color: var(--dbe-bgcolor);
     font-size: 16px;
     padding: 10px 20px;
     border: none;
@@ -378,21 +380,110 @@ form select:focus {
     outline: none;
 }
 
-/* --- Swap Icon --- funktioniert nicht */
+
 .form-swap {
-    display: none;
-    width: calc(80% -20px);
-    height: 1px;
-    z-index: 1;
-    margin-left: 20px;
+    position: relative; 
+    height: 0px; /* Kein sichtbarer Bereich */
+    width: calc(100%); 
+    z-index: 99;
+    background-color: transparent; 
+}
+
+.swap-icon {
+    position: absolute; 
+    top: 50%; 
+    left: calc(80% + 20px); 
+    transform: translate(-50%, -50%); /* Exakte Zentrierung */
 }
 
 .swap-icon img {
+    height: 20px;
+    width: 20px;
+    border: 1px solid var(--dbe-color); 
+    border-radius: 90px; 
+    background-color: var(--dbe-bgcolor); 
+    padding: 2px;
+    transform: rotate(90deg);
+}
+
+
+input[type="radio"] {
+    appearance: none; /* Entfernt das Standard-Browser-Styling */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid #ccc; /* Standard Randfarbe */
+    background-color: #fff; /* Hintergrundfarbe */
     position: relative;
-    height: 30px;
-    width: 30px;
-    top: -12px;
-    right: 0px
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Wenn der Radio-Button ausgewählt ist */
+input[type="radio"]:checked {
+    background-color: var(--dbe-bgcolor); /* Hintergrundfarbe beim Ausgewähltsein */
+    border-color: var(--dbe-main); /* Randfarbe beim Ausgewähltsein */
+}
+
+/* Innerer Kreis für den ausgewählten Zustand */
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Position innerhalb des Radio-Buttons */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px; /* Größe des inneren Kreises */
+    height: 15px;
+    background-color: var(--dbe-main); /* Farbe des inneren Kreises */
+    border-radius: 50%;
+}
+
+
+/* Standard-Styling für den Slider */
+input[type="range"] {
+    -webkit-appearance: none; /* Entfernt das Standard-Styling in Webkit-basierten Browsern (z.B. Chrome, Safari) */
+    -moz-appearance: none; /* Entfernt das Standard-Styling in Firefox */
+    appearance: none; /* Entfernt das Standard-Styling in allen modernen Browsern */
+    width: 100%; /* Breite des Sliders */
+    height: 20px; /* Höhe des Schiebereglers */
+    background: var(--dbe-main); /* Hintergrundfarbe des Sliders */
+    border-radius: 5px; /* Abrundung der Ecken des Sliders */
+    cursor: pointer; /* Zeigt den Cursor als Zeiger */
+    transition: background 0.3s ease; /* Sanfter Übergang der Hintergrundfarbe */
+}
+
+/* Styling für den Daumen (der Teil, den der Benutzer zieht) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Entfernt das Standard-Styling in Webkit-basierten Browsern */
+    appearance: none; /* Entfernt das Standard-Styling in allen modernen Browsern */
+    width: 20px; /* Breite des Daumens */
+    height: 20px; /* Höhe des Daumens */
+    background: var(--dbe-main); /* Farbe des Daumens */
+    border-radius: 50%; /* Rundet den Daumen */
+    border: 2px solid #fff; /* Weißer Rand um den Daumen */
+    cursor: pointer; /* Zeigt den Cursor als Zeiger */
+    transition: background 0.3s ease; /* Sanfter Übergang der Daumenfarbe */
+}
+
+/* Styling für den Daumen in Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 20px; /* Breite des Daumens */
+    height: 20px; /* Höhe des Daumens */
+    background: var(--dbe-main); /* Farbe des Daumens */
+    border-radius: 50%; /* Rundet den Daumen */
+    border: 2px solid #fff; /* Weißer Rand um den Daumen */
+    cursor: pointer; /* Zeigt den Cursor als Zeiger */
+    transition: background 0.3s ease; /* Sanfter Übergang der Daumenfarbe */
+}
+
+/* Styling für den Daumen im Hover-Zustand */
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: var(--dbe-color1); /* Ändert die Farbe des Daumens, wenn der Benutzer mit der Maus darüber fährt */
+}
+
+/* Styling für den Daumen im Fokus-Zustand */
+input[type="range"]:focus::-webkit-slider-thumb {
+    background: var(--dbe-color2); /* Ändert die Farbe des Daumens, wenn er fokussiert ist */
 }
 
 /* Desktop */
@@ -448,7 +539,10 @@ form select:focus {
         grid-row: 2;
         grid-column: 1;
     }
-
+    .form-swap {
+        grid-row: 2;
+        grid-column: 1;
+    }
     .form-input-nach {
         grid-row: 2;
         grid-column: 2;
@@ -510,12 +604,12 @@ form select:focus {
 
     .form-input-nach input {
         justify-self: start;
-        border: 1px solid var(--dbe-grey-light);
+        border: 1px solid var(--dbe-color);
         margin-bottom: 15px;
     }
 
     .form-input-abflug input {
-        border: 1px solid var(--dbe-grey-light);
+        border: 1px solid var(--dbe-color);
         margin: 0px;
         margin-bottom: 15px;
     }
@@ -542,6 +636,35 @@ form select:focus {
         display: flex;
         align-items: baseline;
         /* Vertikal zentrieren */
+    }
+
+    .form-swap {
+        grid-column: 2 / 3;
+        height: 0px;
+        width: 0px;
+        position: relative;
+        margin-top: 22px; /* Verschiebt den gesamten Container leicht nach unten */
+    }
+
+    .swap-icon {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .swap-icon img {
+        transform: rotate(0deg); /* Zurück in die ursprüngliche Ausrichtung */
+    }
+
+    
+    .nach-input {
+        text-indent: 10px;
+    }
+
+    
+    .form-hidden-inputs {
+        top: 40px;
     }
 
 

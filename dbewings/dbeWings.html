@@ -63,51 +63,53 @@
                                     <option value="2">Hinflug</option>
                                 </select>
                             </div>
+                            <!---
                             <div class="form-input-von grid-items">
-                                <input type="text" value="Von">
+                                <input type="text" placeholder="Von">
                             </div>
-                            
                             <div class="form-swap grid-items">
-                                <div class="swap-icon"><img src="./resources/images/arrow-right-left-.svg"></div>
+                                <div class="swap-icon" id="swap-icon"><img src="./resources/images/arrow-right-left-.svg"></div>
                             </div>
-                            
                             <div class="form-input-nach grid-items">
-                                <input type="text" value="Nach">
+                                <input class="nach-input" type="text" placeholder="Nach">
+                            </div>-->
+                            <div class="form-input-von grid-items">
+                                <input id="input-von" type="text" placeholder="Von">
                             </div>
+                            <div class="form-swap grid-items">
+                                <div id="swap-icon" class="swap-icon"><img src="./resources/images/arrow-right-left-.svg" alt="Swap"></div>
+                            </div>
+                            <div class="form-input-nach grid-items">
+                                <input id="input-nach" class="nach-input" type="text" placeholder="Nach">
+                            </div>
+
                             <div class="form-input-abflug grid-items">
-                                <input type="text" value="Ab- und Rückflug">
+                                <input type="text" placeholder="Ab- und Rückflug">
                             </div>
                             <div class="form-hidden grid-items">
                            
                                 <div class="form-icon" onclick="toggleSlider()">
-                                    <label>
-                                    <img name="form-icon-filter" 
-                                     id="form-icon-filter" src="./resources/images/icon-tune.svg"> 
-                                    1 Reisender, Economy</label>
+                                    <label for="form-icon-filter">
+                                        <img name="form-icon-filter" id="form-icon-filter" src="./resources/images/icon-tune.svg"> 
+                                        <span id="icon-label">1 Reisender, Economy</span>
+                                    </label>
                                 </div>
-
-                                <div class="form-hidden-inputs">
+                                
+                                <div class="form-hidden-inputs" style="display: none;">
                                     <div>
-                                        <label for="passengers">Passagiere:</label>
-                                        <input type="range" min="1" max="8" value="1" step="1" id="passengerSlider"
-                                            onchange="updateDisplay()" />
+                                        <label for="passengerSlider">Passagiere:</label>
+                                        <input type="range" min="1" max="8" value="1" step="1" id="passengerSlider" onchange="updateDisplay()">
                                     </div>
                                     <div>
-                                        <input type="radio" name="class" value="Economy" id="economy" checked
-                                            onchange="updateDisplay()">
+                                        <input type="radio" name="class" value="Economy" id="economy" checked onchange="updateDisplay()">
                                         <label for="economy">Economy</label>
                                     </div>
                                     <div>
-                                        <input type="radio" name="class" value="Business" id="business"
-                                            onchange="updateDisplay()">
+                                        <input type="radio" name="class" value="Business" id="business" onchange="updateDisplay()">
                                         <label for="business">Business</label>
                                     </div>
-                                    <div>
-                                        <input type="radio" name="class" value="First" id="first"
-                                            onchange="updateDisplay()">
-                                        <label for="first">First</label>
-                                    </div>
                                 </div>
+                                
                         </div>
 
                         <div class="form-radio grid-items">
@@ -131,7 +133,15 @@
                 <div class="tab-pane" id="tab4">TAB4 Content 4</div>
             </div>
         </div>
-    </section>    
+    </section>
+
+    <main>
+        main
+    </main>
+
+    <footer>
+        footer
+    </footer>
 
     <script type="text/javascript" src="resources/scripts/main.js"></script>
 </body>
