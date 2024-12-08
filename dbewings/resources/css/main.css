@@ -287,14 +287,18 @@ form label {
 
 /* Select Feld */
 .form-select select {
+    appearance:none;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     width: calc(80% + 20px);
     margin-bottom: 10px;
     margin-top: 10px;
     border: 1px solid var(--dbe-color);
+    background-color: var(--dbe-bgcolor);
     padding: 5px;
 }
+
+
 
 /* Input Fields */
 .form-input-von input {

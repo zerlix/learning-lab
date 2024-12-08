@@ -74,27 +74,18 @@ document.getElementById('form-icon-filter').addEventListener('click', function()
 });
 
 
+// Swap search input
 document.addEventListener('DOMContentLoaded', function() {
-    // Finde das Swap-Icon und die Eingabefelder
     const swapIcon = document.getElementById('swap-icon');
     const inputVon = document.getElementById('input-von');
     const inputNach = document.getElementById('input-nach');
 
-    // Überprüfe, ob die Elemente vorhanden sind
     if (swapIcon && inputVon && inputNach) {
-        // Funktion, um die Felder zu tauschen
         swapIcon.addEventListener('click', function() {
-            // Tausche die Werte und Platzhalter der Eingabefelder
             const tempValue = inputVon.value;
-            const tempPlaceholder = inputVon.placeholder;
-
-            // Tausche die Eingabewerte
             inputVon.value = inputNach.value;
             inputNach.value = tempValue;
 
-            // Tausche die Platzhalter
-            inputVon.placeholder = inputNach.placeholder;
-            inputNach.placeholder = tempPlaceholder;
         });
     } else {
         console.error('Ein oder mehrere Elemente wurden nicht gefunden.');
