@@ -22,6 +22,7 @@
     --dbe-color: #062C2C;
     --dbe-color1: #0C4F4F;
     --dbe-bgcolor: #ffffff;
+    --dbe-bgcolor1: #cccccc;
     --dbe-bgcolor-trans: rgba(0, 0, 0, 0.8);
 }
 
@@ -377,7 +378,7 @@ form select:focus {
 }
 
 .form-submit-search input[type="submit"]:hover {
-    background-color: #18a09e;
+    background-color: var(--dbe-main);
 }
 
 .form-submit-search input[type="submit"]:focus {
@@ -395,7 +396,6 @@ form select:focus {
 
 .swap-icon {
     position: absolute; 
-    top: 50%; 
     left: calc(80% + 20px); 
     transform: translate(-50%, -50%); /* Exakte Zentrierung */
 }
@@ -406,7 +406,7 @@ form select:focus {
     border: 1px solid var(--dbe-color); 
     border-radius: 90px; 
     background-color: var(--dbe-bgcolor); 
-    padding: 2px;
+    padding: 3px;
     transform: rotate(90deg);
 }
 
@@ -417,8 +417,8 @@ input[type="checkbox"] {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 4px solid #ccc; /* Standard Randfarbe */
-    background-color: #fff; /* Hintergrundfarbe */
+    border: 4px solid var(--dbe-bgcolor1); /* Standard Randfarbe */
+    background-color: var(--dbe-bgcolor); /* Hintergrundfarbe */
     position: relative;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -470,7 +470,7 @@ input[type="range"]::-webkit-slider-thumb {
     height: 20px; /* Höhe des Daumens */
     background: var(--dbe-main); /* Farbe des Daumens */
     border-radius: 50%; /* Rundet den Daumen */
-    border: 2px solid #fff; /* Weißer Rand um den Daumen */
+    border: 2px solid var(--dbe-bgcolor); /* Weißer Rand um den Daumen */
     cursor: pointer; /* Zeigt den Cursor als Zeiger */
     transition: background 0.3s ease; /* Sanfter Übergang der Daumenfarbe */
 }
@@ -481,7 +481,7 @@ input[type="range"]::-moz-range-thumb {
     height: 20px; /* Höhe des Daumens */
     background: var(--dbe-main); /* Farbe des Daumens */
     border-radius: 50%; /* Rundet den Daumen */
-    border: 2px solid #fff; /* Weißer Rand um den Daumen */
+    border: 2px solid var(--dbe-bgcolor); /* Weißer Rand um den Daumen */
     cursor: pointer; /* Zeigt den Cursor als Zeiger */
     transition: background 0.3s ease; /* Sanfter Übergang der Daumenfarbe */
 }
