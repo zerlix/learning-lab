@@ -47,7 +47,7 @@ tabLinks.forEach(link => {
 /*
     verstecktes Formular ein-/ausblenden 
 */
-document.getElementById('form-icon-filter')?.addEventListener('click', () => {
+document.getElementById('form-icon')?.addEventListener('click', () => {
     const hiddenInputs = document.querySelector('.form-hidden-inputs');
     if (hiddenInputs) {
         // Überprüfen, ob das Element aktuell sichtbar ist und es umschalten
