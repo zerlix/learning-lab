@@ -340,12 +340,12 @@ form label {
     width: calc(80% + 20px);
     text-align: left;
     padding-top: 10px;
-
 }
 
 .form-icon img {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
 
 .form-radio-nonstop {
@@ -641,11 +641,10 @@ input[type="range"]:focus::-webkit-slider-thumb {
         border: 0px;
     }
 
-
-    .form-icon label {
-        display: flex;
-        align-items: baseline;
-        /* Vertikal zentrieren */
+    .form-icon img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
     }
 
     .form-swap {
