@@ -411,7 +411,8 @@ form select:focus {
 }
 
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     appearance: none; /* Entfernt das Standard-Browser-Styling */
     width: 20px;
     height: 20px;
@@ -424,12 +425,14 @@ input[type="radio"] {
 }
 
 /* Wenn der Radio-Button ausgewählt ist */
-input[type="radio"]:checked {
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
     background-color: var(--dbe-bgcolor); /* Hintergrundfarbe beim Ausgewähltsein */
     border-color: var(--dbe-main); /* Randfarbe beim Ausgewähltsein */
 }
 
 /* Innerer Kreis für den ausgewählten Zustand */
+input[type="checkbox"]:checked::after,
 input[type="radio"]:checked::after {
     content: '';
     position: absolute;
@@ -441,7 +444,10 @@ input[type="radio"]:checked::after {
     background-color: var(--dbe-main); /* Farbe des inneren Kreises */
     border-radius: 50%;
 }
-
+input[type="checkbox"] {
+    border-radius: 4px; /* Checkboxen sind eckig */
+    
+}
 
 /* Standard-Styling für den Slider */
 input[type="range"] {
