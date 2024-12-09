@@ -13,35 +13,52 @@ hamburger?.addEventListener('click', () => {
 /*
     Tabs Formularfeld
 */
- const tabLinks = document.querySelectorAll('.tab-link');
+const tabLinks = document.querySelectorAll('.tab-link');
 
 tabLinks.forEach(link => {
     link.addEventListener('click', () => {
+        // Tab-ID aus dem data-tab-Attribut des Links holen
         const tabId = link.getAttribute('data-tab');
         const tabPane = document.getElementById(tabId);
 
-        // Aktiviere den aktuellen Tab
+        // Aktiviere den aktuellen Tab und dessen Inhalt
         link.classList.add('active');
+        link.classList.remove('inactive');
         tabPane.classList.add('active');
-
-        // Deaktiviere andere Tabs
+        
+        // Deaktiviere die anderen Tabs und deren Inhalte
         tabLinks.forEach(otherLink => {
             if (otherLink !== link) {
-                otherLink.classList.remove('active');
+                otherLink.classList.add('inactive');  // Setze die Klasse 'inactive'
+                otherLink.classList.remove('active'); // Entferne die Klasse 'active'
                 const otherTabId = otherLink.getAttribute('data-tab');
-                document.getElementById(otherTabId)?.classList.remove('active');
+                const otherTabPane = document.getElementById(otherTabId);
+                if (otherTabPane) {
+                    otherTabPane.classList.remove('active'); // Entferne 'active' vom anderen Tab-Inhalt
+                }
             }
         });
     });
 });
+
+
+
 
 /*
     verstecktes Formular ein-/ausblenden 
 */
 document.getElementById('form-icon-filter')?.addEventListener('click', () => {
     const hiddenInputs = document.querySelector('.form-hidden-inputs');
-    hiddenInputs?.classList.toggle('show');
+    if (hiddenInputs) {
+        // Überprüfen, ob das Element aktuell sichtbar ist und es umschalten
+        if (hiddenInputs.style.display === 'block') {
+            hiddenInputs.style.display = 'none'; // Verstecke das Element
+        } else {
+            hiddenInputs.style.display = 'block'; // Mache das Element sichtbar
+        }
+    }
 });
+
 
 // Label des icon aktualisieren ( Anzahl Reisende und Klasse)
 function updateDisplay() {
