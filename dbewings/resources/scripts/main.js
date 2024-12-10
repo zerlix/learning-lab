@@ -5,7 +5,7 @@ const hamburger = document.getElementById('hamburger-button');
 const menu = document.getElementById('hamburger-menu');
 
 hamburger?.addEventListener('click', () => {
-    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    menu.classList.toggle('open'); // Toggle die Klasse "open"
 });
 
 
@@ -40,7 +40,6 @@ tabLinks.forEach(link => {
         });
     });
 });
-
 
 
 
