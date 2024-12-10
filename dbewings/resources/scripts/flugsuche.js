@@ -1,7 +1,6 @@
-const endpoint = "https://storage01.dbe.academy/fswd/travel-api.php?start=gibtsnicht&ziel=nirgendwo&datum=05.12.2024";
-/*
-    Daten per Fetch holen und im Main-Bereich anzeigen
-*/
+const endpoint = "https://storage01.dbe.academy/fswd/travel-api.php";
+
+// Event Listener für das Formular
 document.querySelector("#form-fluege")?.addEventListener("submit", async function (e) {
   e.preventDefault(); // Verhindert das normale Absenden des Formulars
 
@@ -9,14 +8,28 @@ document.querySelector("#form-fluege")?.addEventListener("submit", async functio
   const mainContent = document.querySelector("main");
 
   if (overlay && mainContent) {
+    let data;
+
+    // Formulardaten sammeln
+    const von = document.querySelector("#input-von")?.value;
+    const nach = document.querySelector("#input-nach")?.value;
+    const abflug = document.querySelector("input[type='date']")?.value;
+
+    // Überprüfen, ob alle notwendigen Eingaben vorhanden sind
+    if (!von || !nach || !abflug) {
+      mainContent.textContent = "Bitte füllen Sie alle Felder aus.";
+      return;
+    }
+
+    // URL mit den Formulardaten erstellen
+    const requestUrl = `${endpoint}?start=${encodeURIComponent(von)}&ziel=${encodeURIComponent(nach)}&datum=${encodeURIComponent(abflug)}`;
+
     // Overlay anzeigen
     overlay.classList.remove("hidden");
 
-    let data;
-
     // Fetch-Request 
     try {
-      const response = await fetch(endpoint);
+      const response = await fetch(requestUrl);
       if (!response.ok) {
         throw new Error(`Fehler: ${response.status} - ${response.statusText}`);
       }
@@ -26,10 +39,13 @@ document.querySelector("#form-fluege")?.addEventListener("submit", async functio
     } catch (error) {
       mainContent.textContent = `Fehler beim Laden der Daten: ${error.message}`;
     } finally {
-      // Overlay spielerei - Timer extra eingebaut wird nach kurzer Zeit ausblenden
+      // Overlay nach einer kurzen Verzögerung ausblenden
       setTimeout(() => overlay.classList.add("hidden"), 1000);
+
       // JSON-Daten im Main-Bereich anzeigen
-      mainContent.textContent = JSON.stringify(data, null, 2); // Formatierte JSON-Ausgabe
+      if (data) {
+        mainContent.textContent = JSON.stringify(data, null, 2); // Formatierte JSON-Ausgabe
+      }
     }
   }
 });
