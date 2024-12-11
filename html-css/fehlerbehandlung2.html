@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehler an API senden</title>
+</head>
+
+<body>
+
+    <h1>Fehlerbehandlung mit API</h1>
+    <p>Öffne die Konsole, um zu sehen, wie Fehler an die API gesendet werden.</p>
+
+    <script>
+        // Funktion, die den Fehler an die API sendet
+        function sendErrorToAPI(errorDetails) {
+            fetch('https://api.kurs.dbe.academy/v1/errorEvent', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(errorDetails),
+            })
+            .then(response => response.json())
+            .then(data => console.log('Fehler erfolgreich an API gesendet:', data))
+            .catch(err => console.error('Fehler beim Senden an die API:', err));
+        }
+
+        // Fehler-EventListener hinzufügen
+        window.addEventListener('error', function (event) {
+            // Fehlerdetails sammeln
+            const errorDetails = {
+                message: event.message,
+                source: event.filename,
+                lineno: event.lineno,
+                colno: event.colno,
+                errorStack: event.error ? event.error.stack : 'Kein Stacktrace verfügbar',
+                timestamp: new Date().toISOString()
+            };
+
+            // Fehler an die API senden
+            sendErrorToAPI(errorDetails);
+
+            // Konsole zur Fehlerprüfung
+            console.log('Fehler an API gesendet:', errorDetails);
+
+            // Optional: Rückgabe von 'true', um die Standardbehandlung zu verhindern
+            return true;
+        }, true);
+
+        // Beispiel für einen Fehler (nicht definierte Funktion)
+        setTimeout(() => {
+            unbekannteFunktion(); // Diese Funktion ist nicht definiert
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

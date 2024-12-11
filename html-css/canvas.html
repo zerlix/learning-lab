@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+</head>
+
+<body>
+    <canvas id="leinwand1" width="500" height="400" style="border:1px solid #000;"></canvas>
+    <script>
+        // Greife auf das Canvas-Element mittels ID zu
+        const canvas = document.getElementById('leinwand1');
+        const ctx = canvas.getContext('2d');
+
+        // Erzeuge eine rote Fläche
+        ctx.fillStyle = 'red'; // Setze die Füllfarbe auf Rot
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // Fülle die gesamte Fläche des Canvas
+
+
+        // Setze die Textfarbe auf weiß
+        ctx.fillStyle = 'white';
+        // Zeichne den Text "Guten Morgen" auf die Canvas-Fläche
+        ctx.font = '30px Arial'; // Setze die Schriftart und -größe
+        ctx.fillText('Guten Morgen', 150, 200); // X- und Y-Koordinaten für den Text
+    </script>
+</body>
+
+</html>

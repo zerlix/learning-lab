@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fehlerbehandlung Beispiel</title>
+</head>
+<body>
+
+    <h1>Fehlerbehandlung Beispiel</h1>
+    <p>Öffne die Konsole, um Fehler zu sehen.</p>
+
+    <!-- Ein Bild, das nicht existiert -->
+    <img id="bild" src="nichtexistierendesBild.jpg" alt="Fehlerhaftes Bild">
+
+    <script>
+        // window.onerror für JavaScript-Fehler
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.log('JavaScript-Fehler abgefangen!');
+            console.log('Fehlernachricht:', message);
+            console.log('Datei:', source);
+            console.log('Zeile:', lineno);
+            console.log('Spalte:', colno);
+            console.log('Fehlerobjekt:', error);
+            return true; // Fehler wird nicht weiter propagiert
+        };
+
+        // Fehler durch nicht definierte Funktion
+        try {
+            unbekannteFunktion();  // Diese Funktion ist nicht definiert
+        } catch (e) {
+            console.log('Fehler im Try-Catch:', e);
+        }
+
+        // window.addEventListener für Ladefehler von Ressourcen
+        window.addEventListener('error', function(event) {
+            if (event.target.tagName === 'IMG') {
+                console.log('Ladefehler für Bild:', event.target.src);
+            } else {
+                console.log('Fehlerquelle:', event.target);
+                console.log('Fehlermeldung:', event.message);
+            }
+        }, true);
+    </script>
+
+</body>
+</html>
