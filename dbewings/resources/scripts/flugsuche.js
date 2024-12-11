@@ -23,6 +23,24 @@ function showTooltip(element, message) {
   }, 3000);
 }
 
+// Funktion zum Speichern der Formularfelder im LocalStorage
+function saveToLocalStorage(von, nach, abflug) {
+  localStorage.setItem("flugVon", von);
+  localStorage.setItem("flugNach", nach);
+  localStorage.setItem("flugDatum", abflug);
+}
+
+// Funktion zum Laden der Formularfelder aus dem LocalStorage
+function loadFromLocalStorage() {
+  const vonInput = document.querySelector("#input-von");
+  const nachInput = document.querySelector("#input-nach");
+  const datumInput = document.querySelector("input[type='date']");
+
+  if (vonInput) vonInput.value = localStorage.getItem("flugVon") || "";
+  if (nachInput) nachInput.value = localStorage.getItem("flugNach") || "";
+  if (datumInput) datumInput.value = localStorage.getItem("flugDatum") || "";
+}
+
 // Event Listener für das Formular
 document.querySelector("#form-fluege")?.addEventListener("submit", async function (e) {
   e.preventDefault(); // Verhindert das normale Absenden des Formulars
@@ -63,6 +81,9 @@ document.querySelector("#form-fluege")?.addEventListener("submit", async functio
     if (!valid) {
       return;
     }
+
+    // Formulardaten im LocalStorage speichern
+    saveToLocalStorage(von, nach, abflug);
 
     // URL mit den Formulardaten erstellen
     const requestUrl = `${endpoint}?start=${encodeURIComponent(von)}&ziel=${encodeURIComponent(nach)}&datum=${encodeURIComponent(abflug)}`;
@@ -138,3 +159,5 @@ document.querySelector("#form-fluege")?.addEventListener("submit", async functio
   }
 });
 
+// Beim Laden der Seite gespeicherte Werte in die Felder eintragen
+window.addEventListener("DOMContentLoaded", loadFromLocalStorage);
