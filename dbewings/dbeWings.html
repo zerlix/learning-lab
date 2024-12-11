@@ -58,7 +58,7 @@
                     <form action="" id="form-fluege" name="fluege" method="post">
                        <div class="grid-container">
                             <div class="form-select grid-items">
-                                <select>
+                                <select id="select">
                                     <option value="1">Hin- und Rückflug</option>
                                     <option value="2">Hinflug</option>
                                 </select>
@@ -79,10 +79,8 @@
                             <div class="form-hidden grid-items">
                            
                                 <div class="form-icon" id="form-icon">
-                                    <label>
                                         <img name="form-icon-filter" id="form-icon-filter" src="./resources/images/icon-tune.svg"> 
                                         <span id="icon-label">1 Reisender, Economy</span>
-                                    </label>
                                 </div>
                                 
                                 <div class="form-hidden-inputs" style="display: none;">
@@ -126,11 +124,42 @@
     </section>
 
     <main>
-        main
+        <article class="flugbox">
+        <div class="flug-container">
+            <div class="flug-details">
+                <div class="flug-connection">
+                    <div class="flug-start">
+                        <span class="time">10:10</span>
+                        <span class="location">Frankfurt</span>
+                    </div>
+        
+                    <div class="line-wrapper">
+                        <div class="line"></div>
+                    </div>
+        
+                    <div class="flug-end">
+                        <span class="time">13:25</span>
+                        <span class="location">München</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="flug-preis-container">
+                <div class="flug-preise">
+                    <p class="preis"><span class="preis-type">Economy</span><br>ab<br> <span class="preis-amount">150</span><br> EUR</p>
+                </div>
+            
+                <div class="flug-preise">
+                    <p class="preis"><span class="preis-type">Business</span><br>ab<br> <span class="preis-amount">350</span><br> EUR</p>
+                </div>
+            </div>
+        </div>
+        </article>
+
     </main>
 
     <footer>
-        footer
+      
     </footer>
 
     <script type="text/javascript" src="resources/scripts/main.js"></script>

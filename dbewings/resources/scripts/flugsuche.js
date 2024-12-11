@@ -42,10 +42,35 @@ document.querySelector("#form-fluege")?.addEventListener("submit", async functio
       // Overlay nach einer kurzen Verzögerung ausblenden
       setTimeout(() => overlay.classList.add("hidden"), 1000);
 
-      // JSON-Daten im Main-Bereich anzeigen
+      // Flüge formatieren und im Main-Bereich anzeigen
       if (data) {
-        mainContent.textContent = JSON.stringify(data, null, 2); // Formatierte JSON-Ausgabe
+        mainContent.innerHTML = ""; // Vorherigen Inhalt leeren
+
+        // Jeden Flug in ein separates Div setzen
+        data.forEach(flug => {
+          const flugArticle = document.createElement("article");
+          flugArticle.classList.add("flug-container");
+
+          flugArticle.innerHTML = `
+            <div class="flug-header">
+              <span class="flug-start">${flug.start} → ${flug.ziel}</span>
+              <span class="flug-zeiten">${flug.startZeit} - ${flug.endZeit}</span>
+            </div>
+            <div class="flug-details">
+              <p><strong>Flugdauer:</strong> ${flug.flugdauer}</p>
+              <p><strong>Terminal:</strong> ${flug.terminal}</p>
+              <p><strong>Stops:</strong> ${flug.stops === 0 ? "Nonstop" : `${flug.stops} Zwischenstopps`}</p>
+            </div>
+            <div class="flug-preise">
+              <p><strong>Economy:</strong> ${flug.preis.economy}</p>
+              <p><strong>Business:</strong> ${flug.preis.business}</p>
+            </div>
+          `;
+
+          mainContent.appendChild(flugArticle);
+        });
       }
     }
   }
 });
+

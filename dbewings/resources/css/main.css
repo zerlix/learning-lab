@@ -24,6 +24,7 @@
     --dbe-bgcolor: #ffffff;
     --dbe-bgcolor1: #cccccc;
     --dbe-bgcolor-trans: rgba(0, 0, 0, 0.8);
+    --dbe-bgcolor-trans1: rgba(189, 219, 215, 0.5);
 }
 
 body {
@@ -137,7 +138,8 @@ body {
 }
 
 #hamburger-menu.open {
-    display: flex; /* Sichtbar bei aktivierter Klasse "open" */
+    display: flex;
+    /* Sichtbar bei aktivierter Klasse "open" */
 }
 
 #hamburger-menu a {
@@ -277,7 +279,7 @@ body {
 
 
 
-#form-hidden-inputs{
+#form-hidden-inputs {
     margin: 5px;
 }
 
@@ -294,7 +296,7 @@ form label {
 
 /* Select Feld */
 .form-select select {
-    appearance:none;
+    appearance: none;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     width: calc(80% + 20px);
@@ -393,25 +395,27 @@ form select:focus {
 
 
 .form-swap {
-    position: relative; 
-    height: 0px; /* Kein sichtbarer Bereich */
-    width: calc(100%); 
+    position: relative;
+    height: 0px;
+    /* Kein sichtbarer Bereich */
+    width: calc(100%);
     z-index: 99;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .swap-icon {
-    position: absolute; 
-    left: calc(80% + 20px); 
-    transform: translate(-50%, -50%); /* Exakte Zentrierung */
+    position: absolute;
+    left: calc(80% + 20px);
+    transform: translate(-50%, -50%);
+    /* Exakte Zentrierung */
 }
 
 .swap-icon img {
     height: 20px;
     width: 20px;
-    border: 1px solid var(--dbe-color); 
-    border-radius: 90px; 
-    background-color: var(--dbe-bgcolor); 
+    border: 1px solid var(--dbe-color);
+    border-radius: 90px;
+    background-color: var(--dbe-bgcolor);
     padding: 3px;
     transform: rotate(90deg);
 }
@@ -419,12 +423,15 @@ form select:focus {
 
 input[type="radio"],
 input[type="checkbox"] {
-    appearance: none; /* Entfernt das Standard-Browser-Styling */
+    appearance: none;
+    /* Entfernt das Standard-Browser-Styling */
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 4px solid var(--dbe-bgcolor1); /* Standard Randfarbe */
-    background-color: var(--dbe-bgcolor); /* Hintergrundfarbe */
+    border: 4px solid var(--dbe-bgcolor1);
+    /* Standard Randfarbe */
+    background-color: var(--dbe-bgcolor);
+    /* Hintergrundfarbe */
     position: relative;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -433,8 +440,10 @@ input[type="checkbox"] {
 /* Wenn der Radio-Button ausgewählt ist */
 input[type="radio"]:checked,
 input[type="checkbox"]:checked {
-    background-color: var(--dbe-bgcolor); /* Hintergrundfarbe beim Ausgewähltsein */
-    border-color: var(--dbe-main); /* Randfarbe beim Ausgewähltsein */
+    background-color: var(--dbe-bgcolor);
+    /* Hintergrundfarbe beim Ausgewähltsein */
+    border-color: var(--dbe-main);
+    /* Randfarbe beim Ausgewähltsein */
 }
 
 /* Innerer Kreis für den ausgewählten Zustand */
@@ -442,64 +451,179 @@ input[type="checkbox"]:checked::after,
 input[type="radio"]:checked::after {
     content: '';
     position: absolute;
-    top: 50%; /* Position innerhalb des Radio-Buttons */
+    top: 50%;
+    /* Position innerhalb des Radio-Buttons */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 15px; /* Größe des inneren Kreises */
+    width: 15px;
+    /* Größe des inneren Kreises */
     height: 15px;
-    background-color: var(--dbe-main); /* Farbe des inneren Kreises */
+    background-color: var(--dbe-main);
+    /* Farbe des inneren Kreises */
     border-radius: 50%;
 }
+
 input[type="checkbox"] {
-    border-radius: 4px; /* Checkboxen sind eckig */
-    
+    border-radius: 4px;
+    /* Checkboxen sind eckig */
+
 }
 
 /* Standard-Styling für den Slider */
 input[type="range"] {
-    -webkit-appearance: none; /* Entfernt das Standard-Styling in Webkit-basierten Browsern (z.B. Chrome, Safari) */
-    -moz-appearance: none; /* Entfernt das Standard-Styling in Firefox */
-    appearance: none; /* Entfernt das Standard-Styling in allen modernen Browsern */
-    width: 100%; /* Breite des Sliders */
-    height: 20px; /* Höhe des Schiebereglers */
-    background: var(--dbe-main); /* Hintergrundfarbe des Sliders */
-    border-radius: 5px; /* Abrundung der Ecken des Sliders */
-    cursor: pointer; /* Zeigt den Cursor als Zeiger */
-    transition: background 0.3s ease; /* Sanfter Übergang der Hintergrundfarbe */
+    -webkit-appearance: none;
+    /* Entfernt das Standard-Styling in Webkit-basierten Browsern (z.B. Chrome, Safari) */
+    -moz-appearance: none;
+    /* Entfernt das Standard-Styling in Firefox */
+    appearance: none;
+    /* Entfernt das Standard-Styling in allen modernen Browsern */
+    width: 100%;
+    /* Breite des Sliders */
+    height: 20px;
+    /* Höhe des Schiebereglers */
+    background: var(--dbe-main);
+    /* Hintergrundfarbe des Sliders */
+    border-radius: 5px;
+    /* Abrundung der Ecken des Sliders */
+    cursor: pointer;
+    /* Zeigt den Cursor als Zeiger */
+    transition: background 0.3s ease;
+    /* Sanfter Übergang der Hintergrundfarbe */
 }
 
 /* Styling für den Daumen (der Teil, den der Benutzer zieht) */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Entfernt das Standard-Styling in Webkit-basierten Browsern */
-    appearance: none; /* Entfernt das Standard-Styling in allen modernen Browsern */
-    width: 20px; /* Breite des Daumens */
-    height: 20px; /* Höhe des Daumens */
-    background: var(--dbe-main); /* Farbe des Daumens */
-    border-radius: 50%; /* Rundet den Daumen */
-    border: 2px solid var(--dbe-bgcolor); /* Weißer Rand um den Daumen */
-    cursor: pointer; /* Zeigt den Cursor als Zeiger */
-    transition: background 0.3s ease; /* Sanfter Übergang der Daumenfarbe */
+    -webkit-appearance: none;
+    /* Entfernt das Standard-Styling in Webkit-basierten Browsern */
+    appearance: none;
+    /* Entfernt das Standard-Styling in allen modernen Browsern */
+    width: 20px;
+    /* Breite des Daumens */
+    height: 20px;
+    /* Höhe des Daumens */
+    background: var(--dbe-main);
+    /* Farbe des Daumens */
+    border-radius: 50%;
+    /* Rundet den Daumen */
+    border: 2px solid var(--dbe-bgcolor);
+    /* Weißer Rand um den Daumen */
+    cursor: pointer;
+    /* Zeigt den Cursor als Zeiger */
+    transition: background 0.3s ease;
+    /* Sanfter Übergang der Daumenfarbe */
 }
 
 /* Styling für den Daumen in Firefox */
 input[type="range"]::-moz-range-thumb {
-    width: 20px; /* Breite des Daumens */
-    height: 20px; /* Höhe des Daumens */
-    background: var(--dbe-main); /* Farbe des Daumens */
-    border-radius: 50%; /* Rundet den Daumen */
-    border: 2px solid var(--dbe-bgcolor); /* Weißer Rand um den Daumen */
-    cursor: pointer; /* Zeigt den Cursor als Zeiger */
-    transition: background 0.3s ease; /* Sanfter Übergang der Daumenfarbe */
+    width: 20px;
+    /* Breite des Daumens */
+    height: 20px;
+    /* Höhe des Daumens */
+    background: var(--dbe-main);
+    /* Farbe des Daumens */
+    border-radius: 50%;
+    /* Rundet den Daumen */
+    border: 2px solid var(--dbe-bgcolor);
+    /* Weißer Rand um den Daumen */
+    cursor: pointer;
+    /* Zeigt den Cursor als Zeiger */
+    transition: background 0.3s ease;
+    /* Sanfter Übergang der Daumenfarbe */
 }
 
 /* Styling für den Daumen im Hover-Zustand */
 input[type="range"]:hover::-webkit-slider-thumb {
-    background: var(--dbe-color1); /* Ändert die Farbe des Daumens, wenn der Benutzer mit der Maus darüber fährt */
+    background: var(--dbe-color1);
+    /* Ändert die Farbe des Daumens, wenn der Benutzer mit der Maus darüber fährt */
 }
 
 /* Styling für den Daumen im Fokus-Zustand */
 input[type="range"]:focus::-webkit-slider-thumb {
-    background: var(--dbe-color2); /* Ändert die Farbe des Daumens, wenn er fokussiert ist */
+    background: var(--dbe-color2);
+    /* Ändert die Farbe des Daumens, wenn er fokussiert ist */
+}
+
+.flug-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Trennt die Details von den Preis-Boxen */
+    gap: 0px; /* Abstand zwischen den Preis-Boxen und dem Rest */
+}
+
+.flugbox {
+    border-radius: 5px; /* Abgerundete Ecken */
+    padding: 10px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.flug-details {
+    flex-grow: 1; /* Die Flug-Details können den verfügbaren Platz einnehmen */
+}
+
+.flug-preis-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flug-preise {
+    width: 10em;
+    text-align: center;
+}
+
+.flug-connection {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+}
+
+.flug-start,
+.flug-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.time {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    /* Abstand zum Ort */
+}
+
+.line-wrapper {
+    flex-grow: 1;
+    /* Linie füllt den Platz zwischen den Uhrzeiten */
+    position: relative;
+    /* Ermöglicht absolute Positionierung der Linie */
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    /* Zentriert die Linie vertikal */
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--dbe-color1);
+    transform: translateY(-50%);
+    /* Exakte Zentrierung */
+}
+
+.preis {
+    font-size: small;
+}
+
+.preis-type {
+    font-size: 1.2em; /* z.B. für den Preis-Typ (Economy/Business) */
+    font-weight: bold; /* Optional: fett für den Typ */
+}
+
+.preis-amount {
+    font-size: 1.5em; /* Größere Schrift für den Betrag */
+    font-weight: bold;
 }
 
 /* Desktop */
@@ -555,10 +679,12 @@ input[type="range"]:focus::-webkit-slider-thumb {
         grid-row: 2;
         grid-column: 1;
     }
+
     .form-swap {
         grid-row: 2;
         grid-column: 1;
     }
+
     .form-input-nach {
         grid-row: 2;
         grid-column: 2;
@@ -658,7 +784,8 @@ input[type="range"]:focus::-webkit-slider-thumb {
         height: 0px;
         width: 0px;
         position: relative;
-        margin-top: 22px; /* Verschiebt den gesamten Container leicht nach unten */
+        margin-top: 22px;
+        /* Verschiebt den gesamten Container leicht nach unten */
     }
 
     .swap-icon {
@@ -669,18 +796,21 @@ input[type="range"]:focus::-webkit-slider-thumb {
     }
 
     .swap-icon img {
-        transform: rotate(0deg); /* Zurück in die ursprüngliche Ausrichtung */
+        transform: rotate(0deg);
+        /* Zurück in die ursprüngliche Ausrichtung */
     }
 
-    
+
     .nach-input {
         text-indent: 10px;
     }
 
-    
+
     .form-hidden-inputs {
         top: 40px;
     }
 
-
+    .flug-container {
+        flex-direction: row;
+    }
 }
