@@ -568,6 +568,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 
 .flug-preise {
     width: 10em;
+    border: 1px solid;
     text-align: center;
 }
 
@@ -586,6 +587,10 @@ input[type="range"]:focus::-webkit-slider-thumb {
     text-align: center;
 }
 
+.flug-end{
+    margin-right: 15px;
+}
+
 .time {
     font-size: 1.5em;
     font-weight: bold;
@@ -594,10 +599,20 @@ input[type="range"]:focus::-webkit-slider-thumb {
 }
 
 .line-wrapper {
+    display: flex;
     flex-grow: 1;
     /* Linie füllt den Platz zwischen den Uhrzeiten */
     position: relative;
     /* Ermöglicht absolute Positionierung der Linie */
+    justify-content: center;
+    align-items: center;
+
+}
+.stops {
+    text-align: center;
+    background-color: var(--dbe-bgcolor);
+    font-size: 10px;
+    z-index: 99;
 }
 
 .line {
@@ -609,7 +624,20 @@ input[type="range"]:focus::-webkit-slider-thumb {
     height: 1px;
     background-color: var(--dbe-color1);
     transform: translateY(-50%);
-    /* Exakte Zentrierung */
+    margin: 10px;
+    margin-top: 0px;
+}
+.terminal{
+    text-align:right;
+    margin-right: 20px;
+    font-size: 10px;
+}
+
+.dauer {
+    font-size: 10px;
+}
+.location {
+    font-size: 12px;
 }
 
 .preis {
