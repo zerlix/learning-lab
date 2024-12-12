@@ -1,6 +1,5 @@
 'use strict'
 
-
 /* Ein Set ist eine JavaScript-Datenstruktur, die nur eindeutige Werte speichert.
  * [...new Set(array)]
  *    -- new Set(array) entfernt also automatisch alle Duplikate aus dem Array.
