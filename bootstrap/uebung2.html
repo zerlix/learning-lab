@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid  my-4">
+    <!-- Abschnitt: Name -->
+    <h5 class="text-start">Name</h5>
+    <div class="border p-4 mb-4 mx-auto">
+      <div class="row mb-3 align-items-center">
+        <label class="col-sm-4 col-form-label text-end">Anrede:</label>
+        <div class="col-sm-6">
+          <select class="form-select">
+            <option>-</option>
+            <option>Herr</option>
+            <option>Frau</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-4 col-form-label text-end">Vorname *:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="firstname">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-4 col-form-label text-end">Benutzername:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="username">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-4 col-form-label text-end">Nachname *:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="lastname">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Abschnitt: Weitere Informationen -->
+    <h5 class="text-start">Weitere Informationen</h5>
+    <div class="border p-4 mb-4 mx-auto">
+      <div class="row mb-3 align-items-center">
+        <label class="col-sm-4 col-form-label text-end">Registrierungs Datum *:</label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-sm-2">
+          <input type="time" class="form-control">
+        </div>
+        <div class="col-sm-2 mt-2 mt-sm-0">
+          <input type="number" class="form-control" placeholder="57">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Abschnitt: Kontaktmöglichkeit -->
+    <h5 class="text-start">Kontaktmöglichkeit</h5>
+    <div class="border p-4 mx-auto"">
+      <div class="row mb-3">
+        <label class="col-sm-4 col-form-label text-end">E-Mail Adresse *:</label>
+        <div class="col-sm-6">
+          <input type="email" class="form-control" placeholder="email">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-4 col-form-label text-end">Festnetznummer:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="phone">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <script src="./resources/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
