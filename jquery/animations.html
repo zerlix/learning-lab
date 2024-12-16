@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #aniDiv {
+      width: 250px;
+      height: 250px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="aniDiv">Und ab die Post</div>
+  <div class="centerbuttons">
+    <button id="right">Box vergrößern</button>
+    <button id="text">Text animieren</button>
+    <button id="colo">Transparenz</button><br>
+    <button id="reset">Reset</button>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $("#right").click(function () {
+      $("#aniDiv").animate({ width: "500px" }, 1000);
+    });
+    $("#text").click(function () {
+      $("#aniDiv").animate({ fontSize: "2rem" }, 1000);
+    });
+    $("#colo").click(function () {
+      $("#aniDiv").animate({ opacity: "0.5" }, 1000, "swing");
+    });
+
+    $("#reset").click(function () {
+      $("#aniDiv").animate({ width: "250px" }, 200);
+      $("#aniDiv").animate({ fontSize: "1.2rem" }, 200);
+      $("#aniDiv").animate({ opacity: "1" }, 200);
+    });
+  </script>
+</body>
+
+</html>

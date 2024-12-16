@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $.ajax({ url: "https://api.kurs.dbe.academy/v1/mitarbeiter/index.json", cache: false
+    }) .done(function( html ) { console.log("done"); console.log(html); var tplHTML = '<ul>'; $.each(html, function(i, item){ tplHTML += '<li>' + item.first_name+ '</li>'; }); tplHTML += '</ul>'; $( "#results" ).append( tplHTML ); });
+    </script>
+  
+</body>
+</html>
