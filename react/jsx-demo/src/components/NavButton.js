@@ -1,8 +1,29 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import '../styles/NavButton.css'; // Importiere deine CSS-Datei
 
 function NavButton({ href, children }) {
-  return <Button className="navbar-button" variant="outlined" href={href}>{children}</Button>;
+  const [hover, setHover] = useState(false);
+
+  const handleMouseOver = () => {
+    setHover(true);
+  };
+
+  const handleMouseOut = () => {
+    setHover(false);
+  };
+
+  return (
+    <Button
+      className={`navbar-button ${hover ? 'hover' : ''}`}
+      variant="outlined"
+      href={href}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+    >
+      {children}
+    </Button>
+  );
 }
 
 export default NavButton;
