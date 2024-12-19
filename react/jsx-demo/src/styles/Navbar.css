@@ -1,24 +1,12 @@
 /* filepath: /c:/Users/themm/Projekte/learning-lab/react/jsx-demo/src/styles/Navbar.css */
 
 .navbar {
-  margin-bottom: 20px;
-}
-
-.navbar-logo {
-  font-size: 24px;
+  padding: 1rem;
 }
 
 .navbar-links {
   list-style: none;
-  padding: 0;
-}
-
-.navbar-links li {
-  display: inline;
-  margin-right: 10px;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  color: black;
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Abstand zwischen den Buttons */
 }
