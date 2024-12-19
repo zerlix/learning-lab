@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Navbar from './components/Navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import TaskList from './components/TaskList';
 
 const darkTheme = createTheme({
   palette: {
@@ -20,6 +21,7 @@ root.render(
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Navbar />
+      <TaskList />
       <App />
     </ThemeProvider>
   </React.StrictMode>
