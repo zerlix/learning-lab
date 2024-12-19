@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import '../styles/NavButton.css'; // Importiere deine CSS-Datei
+import '../styles/NavButton.css'; 
 
 function NavButton({ href, children }) {
   const [hover, setHover] = useState(false);
