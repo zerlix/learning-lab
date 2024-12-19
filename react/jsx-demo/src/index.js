@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import TaskList from './components/TaskList';
+import Counter from './components/Counter';
 
 const darkTheme = createTheme({
   palette: {
@@ -22,6 +23,7 @@ root.render(
       <CssBaseline />
       <Navbar />
       <TaskList />
+      <Counter />
       <App />
     </ThemeProvider>
   </React.StrictMode>
