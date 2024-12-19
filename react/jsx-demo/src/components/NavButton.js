@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import '../styles/NavButton.css'; 
 
-function NavButton({ href, children }) {
+function NavButton({ href, children, onClick }) {
   const [hover, setHover] = useState(false);
 
   const handleMouseOver = () => {
@@ -20,6 +20,7 @@ function NavButton({ href, children }) {
       href={href}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
+      onClick={onClick} 
     >
       {children}
     </Button>

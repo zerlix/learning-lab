@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavButton from './NavButton';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -11,7 +12,7 @@ function Counter() {
   return (
     <div>
       <h1>Zähler: {count}</h1>
-      <button onClick={increment}>Zähler erhöhen</button>
+      <NavButton onClick={increment}>Zähler erhöhen</NavButton>
     </div>
   );
 }
