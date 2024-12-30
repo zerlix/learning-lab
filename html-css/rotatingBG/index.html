@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hintergrundbild dreht sich um eigene Achse</title>
+  <style>
+    /* Grundstil des Body */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center; /* Zentrieren horizontal */
+      align-items: center; /* Zentrieren vertikal */
+      background-color: #000; /* Hintergrundfarbe */
+      overflow: hidden; /* Verhindert Scrollen */
+    }
+
+    /* Container für das rotierende Hintergrundbild */
+    .rotating-bg {
+      width: 80vw; /* Passe die Größe an den Bildschirm an */
+      height: 100vh; /* Verhältnis der Größe */
+      background-image: url('./lichtspiel.jpg'); 
+      background-size: contain; /* Bild füllt den Container */
+      background-position: center; /* Bild bleibt zentriert */
+      background-repeat: no-repeat;
+      animation: rotate 20s linear infinite; /* Animation */
+    }
+
+    /* Animation */
+    @keyframes rotate {
+      from {
+        transform: rotatey(0deg); /* Startwinkel */
+      }
+      to {
+        transform: rotatey(360deg); /* Volle Drehung */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Container für das rotierende Hintergrundbild -->
+  <div class="rotating-bg"></div>
+</body>
+</html>
