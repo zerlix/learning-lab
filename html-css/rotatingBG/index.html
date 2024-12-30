@@ -18,22 +18,32 @@
 
     /* Container für das rotierende Hintergrundbild */
     .rotating-bg {
-      width: 80vw; /* Passe die Größe an den Bildschirm an */
+      width: 100vw; /* Passe die Größe an den Bildschirm an */
       height: 100vh; /* Verhältnis der Größe */
       background-image: url('./lichtspiel.jpg'); 
       background-size: contain; /* Bild füllt den Container */
       background-position: center; /* Bild bleibt zentriert */
       background-repeat: no-repeat;
-      animation: rotate 20s linear infinite; /* Animation */
+      animation: rotate 220s linear infinite; /* Animation */
+      opacity: 0.2;
+      z-index: -1; /* Hintergrundbild hinter dem Inhalt */
     }
 
+    .content {
+      position: absolute;
+      color: white;
+      background-color: rgba(56, 51, 134, 0.308);
+      width: 100vw; /* Passe die Größe an den Bildschirm an */
+      height: 100vh; /* Verhältnis der Größe */
+      z-index: 1; /* Hintergrundbild hinter dem Inhalt */
+    }
     /* Animation */
     @keyframes rotate {
       from {
-        transform: rotatey(0deg); /* Startwinkel */
+        transform: rotatez(0deg); /* Startwinkel */
       }
       to {
-        transform: rotatey(360deg); /* Volle Drehung */
+        transform: rotatez(360deg); /* Volle Drehung */
       }
     }
   </style>
@@ -41,5 +51,9 @@
 <body>
   <!-- Container für das rotierende Hintergrundbild -->
   <div class="rotating-bg"></div>
+  <div class="content">
+    <h1>Rotierendes Hintergrundbild</h1>
+
+  </div>
 </body>
 </html>
